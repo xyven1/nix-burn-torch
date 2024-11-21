@@ -3,7 +3,8 @@ This repo contains a minimal setup needed to develop GPU accelerated code using 
 
 ```sh
 nix develop # or use direnv, etc.
-cargo run # or build the app, and run the executable, etc.
+cargo build # using `cargo run` directly can cause issues.
+./target/debug/nix-burn-torch # note: by default cuda device 0 is used
 ```
 
 It is important to note that the binary will only work if the devshell is loaded, as that provides the needed runtime dependencies for the `tch` backend provided by burn.
